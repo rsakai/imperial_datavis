@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Chapter 2 Introduction to ggplot2 | Data Visualisation Module</title>
+  <meta name="description" content="Course material for Visualisation course at Imperial">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Chapter 2 Introduction to ggplot2 | Data Visualisation Module />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course material for Visualisation course at Imperial" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 2 Introduction to ggplot2 | Data Visualisation Module />
+  
+  <meta name="twitter:description" content="Course material for Visualisation course at Imperial" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+<link rel="prev" href="gettingStarted.html">
+<link rel="next" href="data-transformation.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Visualization Module</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisite"><i class="fa fa-check"></i>Prerequisite</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contact-information-for-instructor"><i class="fa fa-check"></i>Contact information for instructor</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="gettingStarted.html"><a href="gettingStarted.html"><i class="fa fa-check"></i><b>1</b> Getting started</a><ul>
+<li class="chapter" data-level="1.1" data-path="gettingStarted.html"><a href="gettingStarted.html#installing-r-and-ide"><i class="fa fa-check"></i><b>1.1</b> Installing R and IDE</a></li>
+<li class="chapter" data-level="1.2" data-path="gettingStarted.html"><a href="gettingStarted.html#getting-help"><i class="fa fa-check"></i><b>1.2</b> Getting help</a></li>
+<li class="chapter" data-level="1.3" data-path="gettingStarted.html"><a href="gettingStarted.html#installing-packages"><i class="fa fa-check"></i><b>1.3</b> Installing packages</a></li>
+<li class="chapter" data-level="1.4" data-path="gettingStarted.html"><a href="gettingStarted.html#rmarkdown-introduction"><i class="fa fa-check"></i><b>1.4</b> Rmarkdown introduction</a></li>
+<li class="chapter" data-level="1.5" data-path="gettingStarted.html"><a href="gettingStarted.html#r-data-structure-review"><i class="fa fa-check"></i><b>1.5</b> R data structure review</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introduction to <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#tidyverse-package"><i class="fa fa-check"></i><b>2.2</b> tidyverse package</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#ggplot2-package"><i class="fa fa-check"></i><b>2.3</b> ggplot2 package</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#qplot"><i class="fa fa-check"></i><b>2.3.1</b> qplot()</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#ggplot"><i class="fa fa-check"></i><b>2.3.2</b> ggplot()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#visual-analytics---intro"><i class="fa fa-check"></i><b>2.4</b> Visual analytics - Intro</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#facets"><i class="fa fa-check"></i><b>2.5</b> Facets</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#geometric-objects"><i class="fa fa-check"></i><b>2.6</b> Geometric objects</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#a-layered-grammar-of-graphics"><i class="fa fa-check"></i><b>2.7</b> A layered grammar of graphics</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#loading-the-data"><i class="fa fa-check"></i><b>2.7.1</b> Loading the data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#statistical-transformations"><i class="fa fa-check"></i><b>2.8</b> Statistical transformations</a></li>
+<li class="chapter" data-level="2.9" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#position-adjustments"><i class="fa fa-check"></i><b>2.9</b> Position adjustments</a><ul>
+<li class="chapter" data-level="2.9.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#geom_jitter"><i class="fa fa-check"></i><b>2.9.1</b> geom_jitter()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#novel-graphs"><i class="fa fa-check"></i><b>2.10</b> Novel graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#importing-data"><i class="fa fa-check"></i><b>3.1</b> Importing data</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="data-transformation.html"><a href="data-transformation.html#delimited-text-data-file"><i class="fa fa-check"></i><b>3.1.1</b> Delimited text data file</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data-transformation.html"><a href="data-transformation.html#data-from-an-excel-file"><i class="fa fa-check"></i><b>3.1.2</b> Data from an excel file</a></li>
+<li class="chapter" data-level="3.1.3" data-path="data-transformation.html"><a href="data-transformation.html#data-from-spsssasstata-files"><i class="fa fa-check"></i><b>3.1.3</b> Data from SPSS/SAS/Stata files</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#data-transformation-1"><i class="fa fa-check"></i><b>3.2</b> Data transformation</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data-transformation.html"><a href="data-transformation.html#core-verbs-in-dplyr"><i class="fa fa-check"></i><b>3.2.1</b> Core verbs in dplyr</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-transformation.html"><a href="data-transformation.html#chaining-function-with-the-pipe-operator"><i class="fa fa-check"></i><b>3.2.2</b> Chaining function with the pipe operator</a></li>
+<li class="chapter" data-level="3.2.3" data-path="data-transformation.html"><a href="data-transformation.html#tutorial"><i class="fa fa-check"></i><b>3.2.3</b> Tutorial</a></li>
+<li class="chapter" data-level="3.2.4" data-path="data-transformation.html"><a href="data-transformation.html#dates-and-times"><i class="fa fa-check"></i><b>3.2.4</b> Dates and times</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#tidy-data"><i class="fa fa-check"></i><b>3.3</b> Tidy data</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="data-transformation.html"><a href="data-transformation.html#gather"><i class="fa fa-check"></i><b>3.3.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-transformation.html"><a href="data-transformation.html#spread"><i class="fa fa-check"></i><b>3.3.2</b> <code>spread()</code></a></li>
+<li class="chapter" data-level="3.3.3" data-path="data-transformation.html"><a href="data-transformation.html#separate"><i class="fa fa-check"></i><b>3.3.3</b> <code>separate()</code></a></li>
+<li class="chapter" data-level="3.3.4" data-path="data-transformation.html"><a href="data-transformation.html#unite"><i class="fa fa-check"></i><b>3.3.4</b> <code>unite()</code></a></li>
+<li class="chapter" data-level="3.3.5" data-path="data-transformation.html"><a href="data-transformation.html#exercise"><i class="fa fa-check"></i><b>3.3.5</b> Exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>4</b> Exploratory data analysis</a><ul>
+<li class="chapter" data-level="4.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#case-study-movie-data"><i class="fa fa-check"></i><b>4.1</b> Case study: Movie data</a></li>
+<li class="chapter" data-level="4.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#case-study-skiers"><i class="fa fa-check"></i><b>4.2</b> Case study: Skiers</a></li>
+<li class="chapter" data-level="4.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#graphs-in-25-ways"><i class="fa fa-check"></i><b>4.3</b> Graphs in 25 ways</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="presentation.html"><a href="presentation.html"><i class="fa fa-check"></i><b>5</b> Presentation</a><ul>
+<li class="chapter" data-level="5.1" data-path="presentation.html"><a href="presentation.html#choosing-colours"><i class="fa fa-check"></i><b>5.1</b> Choosing colours</a></li>
+<li class="chapter" data-level="5.2" data-path="presentation.html"><a href="presentation.html#annotations"><i class="fa fa-check"></i><b>5.2</b> Annotations</a></li>
+<li class="chapter" data-level="5.3" data-path="presentation.html"><a href="presentation.html#axes"><i class="fa fa-check"></i><b>5.3</b> Axes</a></li>
+<li class="chapter" data-level="5.4" data-path="presentation.html"><a href="presentation.html#legend"><i class="fa fa-check"></i><b>5.4</b> Legend</a></li>
+<li class="chapter" data-level="5.5" data-path="presentation.html"><a href="presentation.html#using-themes"><i class="fa fa-check"></i><b>5.5</b> Using themes</a></li>
+<li class="chapter" data-level="5.6" data-path="presentation.html"><a href="presentation.html#export"><i class="fa fa-check"></i><b>5.6</b> Export</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="presentation.html"><a href="presentation.html#pdf-svg-wmf-vector-files"><i class="fa fa-check"></i><b>5.6.1</b> PDF, SVG, WMF vector files</a></li>
+<li class="chapter" data-level="5.6.2" data-path="presentation.html"><a href="presentation.html#output-for-powerpoint"><i class="fa fa-check"></i><b>5.6.2</b> Output for Powerpoint</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="presentation.html"><a href="presentation.html#animation"><i class="fa fa-check"></i><b>5.7</b> Animation</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="presentation.html"><a href="presentation.html#editing-a-vector-output-file"><i class="fa fa-check"></i><b>5.7.1</b> Editing a vector Output file</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html"><i class="fa fa-check"></i><b>6</b> Visualisation techniques</a><ul>
+<li class="chapter" data-level="6.1" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#web-based-visualisation-in-r"><i class="fa fa-check"></i><b>6.1</b> Web-based visualisation in R</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#plotly"><i class="fa fa-check"></i><b>6.1.1</b> plotly</a></li>
+<li class="chapter" data-level="6.1.2" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#crosstalk"><i class="fa fa-check"></i><b>6.1.2</b> crosstalk</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#network-visualisation"><i class="fa fa-check"></i><b>6.2</b> Network visualisation</a></li>
+<li class="chapter" data-level="6.3" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#other-techniques"><i class="fa fa-check"></i><b>6.3</b> Other techniques</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#ggally-extension-to-ggplot2"><i class="fa fa-check"></i><b>6.3.1</b> GGally: Extension to <code>ggplot2</code></a></li>
+<li class="chapter" data-level="6.3.2" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#upset-diagram"><i class="fa fa-check"></i><b>6.3.2</b> Upset diagram</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="beyond.html"><a href="beyond.html"><i class="fa fa-check"></i><b>7</b> Beyond</a><ul>
+<li class="chapter" data-level="7.1" data-path="beyond.html"><a href="beyond.html#tableau-tutorial"><i class="fa fa-check"></i><b>7.1</b> Tableau tutorial</a></li>
+<li class="chapter" data-level="7.2" data-path="beyond.html"><a href="beyond.html#python-tutorial"><i class="fa fa-check"></i><b>7.2</b> python tutorial</a></li>
+<li class="chapter" data-level="7.3" data-path="beyond.html"><a href="beyond.html#d3-tutorial"><i class="fa fa-check"></i><b>7.3</b> D3 tutorial</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="beyond.html"><a href="beyond.html#html-widget"><i class="fa fa-check"></i><b>7.3.1</b> HTML widget</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="beyond.html"><a href="beyond.html#useful-blog-posts"><i class="fa fa-check"></i><b>7.4</b> Useful blog posts</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="final-project.html"><a href="final-project.html"><i class="fa fa-check"></i><b>8</b> Final project</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Visualisation Module</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="introduction-to-ggplot2" class="section level1">
+<h1><span class="header-section-number">Chapter 2</span> Introduction to <code>ggplot2</code></h1>
+<blockquote>
+<p>“The simple graph has brought more information to the data analyst’s mind athan any other device.”</p>
+<p>— John Tukey</p>
+</blockquote>
+<div id="overview" class="section level2">
+<h2><span class="header-section-number">2.1</span> Overview</h2>
+<p>R has several systems for data visualisation, and <code>ggplot2</code> is arguably the most elegant and versatile visualisation package, which implements the grammar of graphics theory.</p>
+</div>
+<div id="tidyverse-package" class="section level2">
+<h2><span class="header-section-number">2.2</span> tidyverse package</h2>
+<p><code>tidyverse</code> is a collection of R packages designed for data science, which includes <code>ggplot2</code> package for plotting and <code>dplyr</code> package for data wrangling.</p>
+<p>Install the latest <code>tidyverse</code> package and loading the package</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Install if you have not install, or to update the pacakge</span>
+<span class="kw">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Load the package</span>
+<span class="kw">library</span>(tidyverse)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># We will use this dataset for this section</span>
+mpg</code></pre></div>
+<pre><code>## # A tibble: 234 x 11
+##    manufacturer model displ  year   cyl trans drv     cty   hwy fl    cla…
+##    &lt;chr&gt;        &lt;chr&gt; &lt;dbl&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;chr&gt; &lt;int&gt; &lt;int&gt; &lt;chr&gt; &lt;ch&gt;
+##  1 audi         a4      1.8  1999     4 auto… f        18    29 p     com…
+##  2 audi         a4      1.8  1999     4 manu… f        21    29 p     com…
+##  3 audi         a4      2    2008     4 manu… f        20    31 p     com…
+##  4 audi         a4      2    2008     4 auto… f        21    30 p     com…
+##  5 audi         a4      2.8  1999     6 auto… f        16    26 p     com…
+##  6 audi         a4      2.8  1999     6 manu… f        18    26 p     com…
+##  7 audi         a4      3.1  2008     6 auto… f        18    27 p     com…
+##  8 audi         a4 q…   1.8  1999     4 manu… 4        18    26 p     com…
+##  9 audi         a4 q…   1.8  1999     4 auto… 4        16    25 p     com…
+## 10 audi         a4 q…   2    2008     4 manu… 4        20    28 p     com…
+## # ... with 224 more rows</code></pre>
+<div class="task">
+TASK:
+<ul>
+<li>
+Look up a vignette for the <code>tidyverse</code> package.
+</li>
+<li>
+Find additional documentation on <code>mpg</code> dataset to learn more about the dataset.
+</li>
+</ul>
+</div>
+<script>
+function toggleCollapsibleById(id) {
+    var x = document.getElementById(id);
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+<button onclick="toggleCollapsibleById('ans01')">
+Answer
+</button>
+<div id="ans01" style="display:none">
+<p>Opening vignette for tidyverse: </br> <code>vignette(package =“tidyverse”)</code></br> <code>vignette(“manifesto”, package =“tidyverse”)</code></br></p>
+<p>Check the dataset:</br> <code>?mpg</code></p>
+</div>
+</div>
+<div id="ggplot2-package" class="section level2">
+<h2><span class="header-section-number">2.3</span> ggplot2 package</h2>
+<p>Now that you have a better understanding of <code>mpg</code> dataset,let’s start with a simple question/hypothesis: <em>Do casrs with big engines use more feul than cars with small engignes?</em> You may already have a hunch to answer this question, but what do you think the relationship between engine size and fuel efficiency is like? It is a linear or non-linear function?</p>
+<div class="task">
+TASK:
+<ul>
+<li>
+Look up which variable is for car’s engine size in <code>mpg</code> dataset.
+</li>
+<li>
+Look up which variable is for car’s fuel efficiency in <code>mpg</code> dataset.
+</li>
+</ul>
+</div>
+<button onclick="toggleCollapsibleById('ans02')">
+Answer
+</button>
+<div id="ans02" style="display:none">
+<p>Opening vignette for tidyverse: </br> <code>displ</code> variable is for car’s engine size in liters.</br> <code>hwy</code> variable is for car’s fuel efficiency on the highway, in miles per gallon. </br></p>
+</div>
+<div id="qplot" class="section level3">
+<h3><span class="header-section-number">2.3.1</span> qplot()</h3>
+<p><code>ggplot2</code> comes with a function called <code>qplot()</code>, which is quivalent to the base <code>plot()</code> function. It is a convenient wrapper for creating a number of different types plots using a consistent calling scheme, but since this is a data visualization course, we will stick with <code>ggplot()</code> as it allows you to choose visual channels to create more complex graphics.</p>
+</div>
+<div id="ggplot" class="section level3">
+<h3><span class="header-section-number">2.3.2</span> ggplot()</h3>
+<p>Let’s start creating a scatter plot with <code>displ</code> on the x-axis and <code>hwy</code> on the y-axis to explore the relationship between the engine size and the fuel efficiency.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy))</code></pre></div>
+<p><img src="ic-datavis_files/figure-html/f02_1-1.png" width="672" /></p>
+<p>The graph above shows a negative relationship between engine size and fuel efficiency, suggeting that cars with bitter engines tend to use more fuel.</p>
+<p>To create a plot with <code>ggplot2</code>, you follow these steps:</p>
+<ol style="list-style-type: decimal">
+<li><p><code>ggplot()</code> creates a coordinate system that you can add layers of <code>geom</code> (geometric object) to. The first argument of <code>ggplot()</code> is the data table to use in the graph. Thus, <code>ggplot(data = mpg)</code> create an empty graph, just pointing to the data source for plotting.</p></li>
+<li><p>To actually plot something, you need to choose a visual channel, called<code>geom</code> in <code>ggplot2</code> term. The function <code>geom_point()</code> adds a geom layer of points to your graph, resulting a scatterplot. There are many <code>geom</code> functions and each <code>geom</code> function takes a <code>mapping</code> argument, in which you define the data mapping. The <code>mapping</code> argument is always paired with <code>aes()</code>. In this example, <code>x</code> and <code>y</code> arguments of <code>aes()</code> specify which variables to mapt to the x and y axes.</p></li>
+</ol>
+<p>In summary, a template looks like this:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> <span class="op">&lt;</span>DATA<span class="op">&gt;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="er">&lt;</span>GEOM_FUNCTION<span class="op">&gt;</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="op">&lt;</span>MAPPINGS<span class="op">&gt;</span>))</code></pre></div>
+<p>I find this <strong>ggplot2 cheat sheet</strong> from RStudio very helpful to have this print out laying around on my desk while doing exploratory data analysis.</p>
+<p><a href="https://github.com/rstudio/cheatsheets/raw/master/data-visualization-2.1.pdf"><img src="images/ggplot2_cheat_sheet.png" alt="ggplot2 cheat sheet" /></a></p>
+<div class="task">
+TASK:
+<ul>
+<li>
+Run <code>ggplot(data = mpg)</code>. What do you see?
+</li>
+<li>
+How many rows are in <code>mpg</code>? How many columns/variables?
+</li>
+<li>
+What does the <code>drv</code> variable describe?
+</li>
+<li>
+Make a scatterplot of <code>hwy</code> on x-axis and <code>cyl</code> on y-axis.
+</li>
+<li>
+Make a scatter plot of <code>class</code> vs <code>drv</code>. Why is the plot not very useful?
+</li>
+</ul>
+</div>
+<p><span class="citation">(Wickham and Grolemund <a href="#ref-RDS_Book">2016</a>)</span></p>
+</div>
+</div>
+<div id="visual-analytics---intro" class="section level2">
+<h2><span class="header-section-number">2.4</span> Visual analytics - Intro</h2>
+<p>Let’s have a closer look at the graph you generated above. It looks liek one group of points highlighted in red seem to fall out of the linear trend. These cars have relatively large engine size (<code>displ</code>) and higher fuel efficiency (<code>hwy</code>) than you might expect.</p>
+<p><img src="ic-datavis_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<div class="task">
+TASK:
+<ul>
+<li>
+Think about why this may be.
+</li>
+<li>
+Look up <code>?mpg</code> to see what other variables you may consider to address your hypothesis
+</li>
+</ul>
+</div>
+<p><br> If you look up <code>?mpg</code>, you see a variable called <code>class</code> which indicates types of car. This <code>class</code> variable might be an interesting variable to explore further. To get a quick glimps of what values are included in this variable, run <code>table(mpg$class)</code>. In this table, you can see that <code>class</code> is a categorical variable of 7 categories. <br></p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Var1</th>
+<th align="right">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2seater</td>
+<td align="right">5</td>
+</tr>
+<tr class="even">
+<td align="left">compact</td>
+<td align="right">47</td>
+</tr>
+<tr class="odd">
+<td align="left">midsize</td>
+<td align="right">41</td>
+</tr>
+<tr class="even">
+<td align="left">minivan</td>
+<td align="right">11</td>
+</tr>
+<tr class="odd">
+<td align="left">pickup</td>
+<td align="right">33</td>
+</tr>
+<tr class="even">
+<td align="left">subcompact</td>
+<td align="right">35</td>
+</tr>
+<tr class="odd">
+<td align="left">suv</td>
+<td align="right">62</td>
+</tr>
+</tbody>
+</table>
+<p>From the lecture, you have learned that <em>colour</em> is a good visual channel for categorical data, so let’s colour each dots based on the <code>class</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color=</span> class)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>() </code></pre></div>
+<p><img src="ic-datavis_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<div class="task">
+TASK:
+<ul>
+<li>
+Run the following code. Why are the points not blue?
+</li>
+<code> ggplot(data = mpg) + geom_point(mapping = aes(x = displ, y = hwy, color =“blue”)) </code>
+<li>
+Which variables in <code>mpg</code> are categorical? Which variables are quantitative? (Hint: <code>?mpg</code> to read the documentation for the data set)
+</li>
+<li>
+Try mapping a quantitative variable to <code>color</code>, <code>size</code> and <code>shape</code>. How do these aesthetics behave differently for categorical vs. quantitative variables?
+</li>
+<li>
+What happens if you map the same variable to multiple aesthetics?
+</li>
+<li>
+What does the <code>stroke</code> aesthetic do? What shapes does it work with? (Hint: use <code>?geom_point</code>)
+</li>
+<li>
+What happens if you map an aesthetic to something other than a variable name, like <code>aes(color = displ &lt; 5)</code>?
+</li>
+</ul>
+</div>
+<p><span class="citation">(Wickham and Grolemund <a href="#ref-RDS_Book">2016</a>)</span></p>
+</div>
+<div id="facets" class="section level2">
+<h2><span class="header-section-number">2.5</span> Facets</h2>
+<p>Faceting is a powerful and general technique where you partition your data and small multiple plots side by side. Comparing multiple views side by side is easier compared to changing a plot with a selected varialble at a time. <code>ggplot2</code> comes with useful functions <code>facet_wrap()</code> and <code>facet_grid()</code>.</p>
+<p>To facet your plot bya single <em>categorical</em> variable, let’s try with <code>facet_wrap()</code>. The first argument you need to pass to this function is a formula. Run the example code below and see if you can see any patterns in the output.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg)<span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_wrap</span>(<span class="op">~</span><span class="st"> </span>class, <span class="dt">nrow =</span> <span class="dv">2</span>)</code></pre></div>
+<p><img src="ic-datavis_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>You can also partition into a matrix by passing two <em>categorical</em> variables. We will use <code>facet_grid()</code> and pass a formula also. Let’s create a matrix of <code>drv</code> (f = front-wheel drive, r = rear wheel drive, 4 = 4wd) and <code>cyl</code> (number of cylinders).</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg)<span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_grid</span>(drv <span class="op">~</span><span class="st"> </span>cyl)</code></pre></div>
+<p><img src="ic-datavis_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>You notice in the matrix of small multiples, the labels for faceting are missing. You can adjust the labels by passing <code>labeller</code> argument in <code>facet_grid()</code> function, as shown below. It is a good practice to generate graphs and make them easier to understand and make them less error-prone.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg)<span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_grid</span>(drv <span class="op">~</span><span class="st"> </span>cyl, <span class="dt">labeller =</span> label_both)</code></pre></div>
+<p><img src="ic-datavis_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<div class="task">
+TASK:
+<ul>
+<li>
+What happens if you facet on a continuous varialbe?
+</li>
+<li>
+What does the following code make? What does <code>.</code> do in the <code>facet_grid</code> formula?
+</li>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg)<span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_grid</span>(drv <span class="op">~</span><span class="st"> </span>., <span class="dt">labeller =</span> label_both)
+
+<span class="kw">ggplot</span>(<span class="dt">data =</span> mpg)<span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">facet_grid</span>(. <span class="op">~</span><span class="st"> </span>cyl, <span class="dt">labeller =</span> label_both)</code></pre></div>
+<li>
+When using <code>facet_grid()</code> you should usually put the categorical variable with more categories in the columns. Why?
+</li>
+</ul>
+</div>
+<p><span class="citation">(Wickham and Grolemund <a href="#ref-RDS_Book">2016</a>)</span></p>
+</div>
+<div id="geometric-objects" class="section level2">
+<h2><span class="header-section-number">2.6</span> Geometric objects</h2>
+<p>How are these following plots similar?</p>
+<p><img src="ic-datavis_files/figure-html/unnamed-chunk-14-1.png" width="50%" /><img src="ic-datavis_files/figure-html/unnamed-chunk-14-2.png" width="50%" /></p>
+<p>These plots are different representations of the same dataset. In ggplot, we can choose different <code>geom</code> functions to apply basic statistical transformation and create plots.</p>
+<p>The below is the code used to generate the two graphs above.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy))
+<span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy))</code></pre></div>
+<div class="task">
+TASK:
+<ul>
+<li>
+Review the <code>geom</code> functions and its <code>mapping</code> argument it takes in the <code>ggplot2</code> cheat sheet.
+</li>
+<li>
+Creativity in designing a plot comes to play when you think of layering multiple <code>geom</code> functions. Run the code:
+</li>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy))</code></pre></div>
+<li>
+<p>The code below also produces the same graph. Why is it a better code than the above?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>()</code></pre></div>
+</li>
+<li>
+<p>Think of what the output will look like, then run the following code to check your prediction. What does <code>se</code> argument do? What does <code>show.legend</code> argument do?</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color =</span> drv)) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_point</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">se =</span> <span class="ot">FALSE</span>, <span class="dt">show.legend =</span> <span class="ot">FALSE</span>)</code></pre></div>
+</li>
+<li>
+See if you can reproduce the follwoing plots:
+</li>
+<img src="ic-datavis_files/figure-html/unnamed-chunk-19-1.png" width="45%" /><img src="ic-datavis_files/figure-html/unnamed-chunk-19-2.png" width="45%" /><img src="ic-datavis_files/figure-html/unnamed-chunk-19-3.png" width="45%" /><img src="ic-datavis_files/figure-html/unnamed-chunk-19-4.png" width="45%" /><img src="ic-datavis_files/figure-html/unnamed-chunk-19-5.png" width="45%" /><img src="ic-datavis_files/figure-html/unnamed-chunk-19-6.png" width="45%" />
+</ul>
+</div>
+<button onclick="toggleCollapsibleById('ans03')">
+Answer
+</button>
+<div id="ans03" style="display:none">
+<p>Last task:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">    <span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
+<span class="st">      </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">      </span><span class="kw">geom_smooth</span>(<span class="dt">se =</span> <span class="ot">FALSE</span>)
+    <span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
+<span class="st">      </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">group =</span> drv), <span class="dt">se =</span> <span class="ot">FALSE</span>) <span class="op">+</span>
+<span class="st">      </span><span class="kw">geom_point</span>()
+    <span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy, <span class="dt">color =</span> drv)) <span class="op">+</span><span class="st"> </span>
+<span class="st">      </span><span class="kw">geom_point</span>() <span class="op">+</span><span class="st"> </span>
+<span class="st">      </span><span class="kw">geom_smooth</span>(<span class="dt">se =</span> <span class="ot">FALSE</span>)
+    <span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
+<span class="st">      </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> drv)) <span class="op">+</span><span class="st"> </span>
+<span class="st">      </span><span class="kw">geom_smooth</span>(<span class="dt">se =</span> <span class="ot">FALSE</span>)
+    <span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
+<span class="st">      </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">color =</span> drv)) <span class="op">+</span>
+<span class="st">      </span><span class="kw">geom_smooth</span>(<span class="kw">aes</span>(<span class="dt">linetype =</span> drv), <span class="dt">se =</span> <span class="ot">FALSE</span>)
+    <span class="kw">ggplot</span>(<span class="dt">data =</span> mpg, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy)) <span class="op">+</span><span class="st"> </span>
+<span class="st">      </span><span class="kw">geom_point</span>(<span class="dt">size =</span> <span class="dv">4</span>, <span class="dt">colour =</span> <span class="st">&quot;white&quot;</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">      </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">colour =</span> drv))</code></pre></div>
+</div>
+<p><span class="citation">(Wickham and Grolemund <a href="#ref-RDS_Book">2016</a>)</span></p>
+</div>
+<div id="a-layered-grammar-of-graphics" class="section level2">
+<h2><span class="header-section-number">2.7</span> A layered grammar of graphics</h2>
+<p>This section’s content is based on <a href="http://vita.had.co.nz/papers/layered-grammar.pdf">this article</a> by Hadley Wickham. <span class="citation">(Wickham <a href="#ref-Hadley_2010">2010</a>)</span></p>
+<p>We are going to try to reproduce the top part of Minard’s famous depiction of Napoleon’s march on Russia, as shown below.</p>
+<p><img src="images/Minard.png" alt="Minard’s map" /> Image from:<a href="https://en.wikipedia.org/wiki/File:Minard.png" class="uri">https://en.wikipedia.org/wiki/File:Minard.png</a></p>
+<p>The top part of the graph displays the number of troops druing the advance and retreat, while the bottom part represents the temperature change during the advance. For this tutorial, as we are focusing on the top part, two relevant datasets are <em>cities</em> and <em>troops</em>. Each city has a position (a latitude and longitude), and a name. Each troop observation has a position, a direction (advance or retreat), and number of survivors. Although this may not be obvious, there is an additional variable which separates the <em>arms</em> of the advance and retreat.</p>
+<p>To get started, first download the datasets in the supplementary files from this <a href="https://www.tandfonline.com/doi/suppl/10.1198/jcgs.2009.07098?scroll=top">page</a>, then save the unzipped file in the folder in your working directory. For the codes below, I have saved the data files in a directory called “data”.</p>
+<div id="loading-the-data" class="section level3">
+<h3><span class="header-section-number">2.7.1</span> Loading the data</h3>
+<p>Let’s load the data. Details on how to load other types of file will be covered in another lecture.</p>
+<div class="task">
+TASK:
+<ul>
+<li>
+Examine the <code>troops</code> and <code>cities</code> data tables and consider how you might approach about reproducing the graph.
+</li>
+</li>
+</div>
+<p>Let’s start with drawing the troops marching paths. Using the <code>lat</code> and <code>long</code>, we will first draw lines. Notice that we are using the <code>group</code> argument to group draw 3 paths separately.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># put the legend on the bottom</span>
+<span class="kw">ggplot</span>(<span class="dt">data =</span> troops) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_path</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">group =</span> group)) </code></pre></div>
+<p><img src="ic-datavis_files/figure-html/minard_1-1.png" width="672" /></p>
+<p>Now that we have the paths, we can draw draw each segments with varying <code>size</code>, and <code>direction</code>. We define additional arguments in <code>aes()</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># put the legend on the bottom</span>
+<span class="kw">ggplot</span>(<span class="dt">data =</span> troops) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_path</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">size =</span> survivors, <span class="dt">colour =</span> direction, <span class="dt">group =</span> group)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">&quot;bottom&quot;</span>)</code></pre></div>
+<p><img src="ic-datavis_files/figure-html/minard_2-1.png" width="672" /></p>
+<p>Now that you have the essence of the graph, let’s add the labels.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_path</span>(<span class="dt">data =</span> troops, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">size =</span> survivors, <span class="dt">color =</span> direction, <span class="dt">group =</span> group)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">data =</span> cities, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">label =</span> city), <span class="dt">size =</span> <span class="dv">4</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">&quot;bottom&quot;</span>)</code></pre></div>
+<p><img src="ic-datavis_files/figure-html/minard_3-1.png" width="672" /></p>
+<p>To finish up the graph by adjusting the range of line thickness.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>() <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_path</span>(<span class="dt">data =</span> troops, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">size =</span> survivors, <span class="dt">color =</span> direction, <span class="dt">group =</span> group), <span class="dt">lineend =</span> <span class="st">&quot;round&quot;</span>, <span class="dt">linejoin =</span> <span class="st">&quot;mitre&quot;</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_size</span>(<span class="dt">range =</span> <span class="kw">c</span>(<span class="fl">0.5</span>, <span class="dv">12</span>), <span class="dt">limits =</span> <span class="kw">c</span>(<span class="dv">4000</span>, <span class="dv">350000</span>), <span class="dt">trans =</span> <span class="st">&quot;identity&quot;</span>, <span class="dt">breaks =</span> <span class="kw">c</span>(<span class="dv">100000</span>, <span class="dv">200000</span>, <span class="dv">300000</span>),  <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;100k&quot;</span>, <span class="st">&quot;200k&quot;</span>, <span class="st">&quot;300k&quot;</span>))<span class="op">+</span>
+<span class="st">  </span><span class="kw">scale_color_manual</span>(<span class="dt">values =</span> <span class="kw">c</span>(<span class="st">&quot;#E5CBAA&quot;</span>,<span class="st">&quot;black&quot;</span>), <span class="dt">labels =</span> <span class="kw">c</span>(<span class="st">&quot;Advance&quot;</span>, <span class="st">&quot;Retreat&quot;</span>)) <span class="op">+</span>
+<span class="st">  </span><span class="kw">xlab</span>(<span class="ot">NULL</span>) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">ylab</span>(<span class="ot">NULL</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">data =</span> cities, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">label =</span> city), <span class="dt">size =</span> <span class="dv">1</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_text</span>(<span class="dt">data =</span> cities, <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> long, <span class="dt">y =</span> lat, <span class="dt">label =</span> city), <span class="dt">size =</span> <span class="dv">3</span>, <span class="dt">color =</span> <span class="st">&quot;red&quot;</span>, <span class="dt">hjust =</span><span class="op">-</span><span class="fl">0.1</span>) <span class="op">+</span>
+<span class="st">  </span><span class="kw">theme_bw</span>()<span class="op">+</span>
+<span class="st">  </span><span class="kw">theme</span>(<span class="dt">legend.position=</span><span class="st">&quot;bottom&quot;</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">guides</span>(<span class="dt">size =</span> <span class="kw">guide_legend</span>(<span class="dt">title =</span> <span class="ot">NULL</span>), <span class="dt">color =</span> <span class="kw">guide_legend</span>(<span class="dt">title =</span><span class="ot">NULL</span>))</code></pre></div>
+<p><img src="ic-datavis_files/figure-html/minard_4-1.png" width="672" /></p>
+<p>The final plot is nowhere near plished as Minard’s map, but it captures the essence and demonstrates the flexibility of <code>ggplot2</code>.</p>
+<p>If you are interested in how to take the output a little further, Andrew Heiss wrote a tutorial <a href="https://www.andrewheiss.com/blog/2017/08/10/exploring-minards-1812-plot-with-ggplot2/">here</a>.</p>
+</div>
+</div>
+<div id="statistical-transformations" class="section level2">
+<h2><span class="header-section-number">2.8</span> Statistical transformations</h2>
+<p><code>ggplot()</code> includes a number of statistical transformations that runs behind the scene. It is subtle, but it is important to understand the inner working of a seemingly simple bar chart shown below. Let’s look at the following 2 lines of codeand the generated bar chart. For this section we will use <code>diamonds</code> datasets, which comes with <code>ggplot2</code> pacakge. To learn more about the datasets run <code>?diamonds</code>.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> cut))</code></pre></div>
+<p><img src="ic-datavis_files/figure-html/bar_basic-1.png" width="672" /></p>
+<p>The bar chart above shows the number of diamonds data points per quality of cut. It shows that the datasets contains more diamonds with higher quality cuts than that of low quality cuts.</p>
+<p>Notice that you only defined the x-axis (<code>cut</code>) above and the <code>count</code> on the y-axis is derived without explicit instruction. Depending on the <code>geom</code> type you choose, a default <em>statistical transformation</em> (<strong>stat</strong> for short) is applied. To learn more about the <code>stat</code> arguement, inspect the function by running <code>?geom_bar()</code>. The default value for <code>stat</code> is <em>count</em>, which means that <code>geom_bar()</code> uses <code>stat_count()</code> by defualt.</p>
+<p>In the <code>geom_bar()</code> documentation, if you scroll down, you will see a section called <strong>Computed variables</strong>, under which it lists <code>count</code> and <code>prop</code> and how they are computed.</p>
+<p>There are number of cases you may want to override this default statistical transformation:</p>
+<ol style="list-style-type: decimal">
+<li>What You See Is What You Get (WYSIWYG)
+<ul>
+<li>You may want to pre-calculate and supply the values exactly to create a bar charts.</li>
+<li>Use <code>stat = &quot;identity&quot;</code> to define values for <code>x</code> and <code>y</code>.</li>
+</ul></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># summary</span>
+cut &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;Fair&quot;</span>,<span class="st">&quot;Good&quot;</span>, <span class="st">&quot;Very Good&quot;</span>, <span class="st">&quot;Premium&quot;</span>, <span class="st">&quot;Ideal&quot;</span>)
+freq &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1610</span>, <span class="dv">4906</span>, <span class="dv">12082</span>, <span class="dv">13791</span>, <span class="dv">21551</span>)
+demo &lt;-<span class="st"> </span><span class="kw">data_frame</span>(cut, freq)
+
+
+<span class="kw">ggplot</span>(<span class="dt">data =</span> demo) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> cut, <span class="dt">y =</span> freq), <span class="dt">stat =</span> <span class="st">&quot;identity&quot;</span>)</code></pre></div>
+<p><img src="ic-datavis_files/figure-html/recalcualte-1.png" width="672" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Using other computed variables
+<ul>
+<li>You may wish to use other computed variables.</li>
+<li>In the case of <code>geom_bar()</code>, <code>prop</code> returns groupwise proportion.</li>
+<li>Note: <code>group = &quot;demo&quot;</code> is passed in the <code>aes()</code> to override its default grouping by each level of <code>cut</code> separately. Try running without <code>group = &quot;demo&quot;</code>, and see what you get. In other words, you can call the group whatever you like, e.g. <code>group = &quot;x&quot;</code>.<br />
+</li>
+<li>Note: To access a computed variables, you surrounds the variable name with two periods, as shown as <code>..prop..</code>.</li>
+</ul></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> cut, <span class="dt">y =</span> ..prop.., <span class="dt">group =</span> <span class="st">&quot;demo&quot;</span>))</code></pre></div>
+<p><img src="ic-datavis_files/figure-html/prop_example-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: decimal">
+<li>Using non-defualt statistical transformation
+<ul>
+<li>You may choose to use other statistical transformations. (See the <code>ggplot2</code> sheet for other <em>stats</em>)</li>
+<li>Let’s look at <code>stat_summary()</code>.</li>
+<li>Note: <code>cut</code> is a categorical variable. <code>depth</code> is a quantitative/continuous variable for the total depth percentage.</li>
+</ul></li>
+</ol>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds) <span class="op">+</span>
+<span class="st">  </span><span class="kw">stat_summary</span>( <span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> cut, <span class="dt">y =</span> depth), <span class="dt">fun.ymin =</span> min, <span class="dt">fun.ymax =</span> max, <span class="dt">fun.y =</span> median)</code></pre></div>
+<p><img src="ic-datavis_files/figure-html/pointrange-1.png" width="672" /></p>
+<div class="task">
+TASK:
+<ul>
+<li>
+What is the default geom associated with <code>stat_summary()</code>? How can you rewrite the previous plot to use that geom function instead of the stat function?
+</li>
+<li>
+What does <code>geom_col()</code> do? How is it different to <code>geom_bar()</code>? (Hint: Read the documentation)
+</li>
+<li>
+What variables does <code>stat_smooth()</code> computer? What are parameters involved in controlling its behaviour?
+</li>
+</div>
+<p><span class="citation">(Wickham and Grolemund <a href="#ref-RDS_Book">2016</a>)</span></p>
+</div>
+<div id="position-adjustments" class="section level2">
+<h2><span class="header-section-number">2.9</span> Position adjustments</h2>
+<p>The <code>position</code> argument specifies how the graphs are drawn, while <code>stat</code> defines the statistical transformation. Let’s look at the following example:</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> cut, <span class="dt">fill =</span> clarity))</code></pre></div>
+<p><img src="ic-datavis_files/figure-html/stacked_bar-1.png" width="672" /></p>
+<p>By specifying “fill” aesthetics in the barchart, it creates a stacked barchart because the default <strong>position adjsutment</strong> for <code>geom_bar</code> is <code>stack</code>. (Check the documentation <code>?geom_bar</code>). For <code>geom_bar</code>, you can use one of four options:</p>
+<ol style="list-style-type: decimal">
+<li><code>stack</code> : default option to create a stacked barcharts</li>
+<li><code>identity</code> : un-stacked, draws each object exactly where it falls in the context of the graph. This option is not very helpful as bars overlap</li>
+<li><code>dodge</code> : avoids overlapping bars by placing beside one another</li>
+<li><code>fill</code> : works like <code>stack</code> but visualise the proportions across groups</li>
+</ol>
+<p><img src="ic-datavis_files/figure-html/position_options-1.png" width="45%" /><img src="ic-datavis_files/figure-html/position_options-2.png" width="45%" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> cut, <span class="dt">fill =</span> clarity), <span class="dt">position =</span> <span class="st">&quot;dodge&quot;</span>)
+
+<span class="kw">ggplot</span>(<span class="dt">data =</span> diamonds) <span class="op">+</span><span class="st"> </span>
+<span class="st">  </span><span class="kw">geom_bar</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> cut, <span class="dt">fill =</span> clarity), <span class="dt">position =</span> <span class="st">&quot;fill&quot;</span>)</code></pre></div>
+<div id="geom_jitter" class="section level3">
+<h3><span class="header-section-number">2.9.1</span> geom_jitter()</h3>
+<p>Another type of position adjustment that is useful for a scatter plot to aviod overplotting is <code>position = &quot;jitter&quot;</code>, where small amount of random noise to each point is added to spread the overlapping points out. See the two graphs below with and without jitter.</p>
+<p><img src="ic-datavis_files/figure-html/jitter-1.png" width="45%" /><img src="ic-datavis_files/figure-html/jitter-2.png" width="45%" /></p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy), <span class="dt">position =</span> <span class="st">&quot;jitter&quot;</span>, <span class="dt">alpha =</span> <span class="fl">0.5</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;with jitter&quot;</span>)
+
+<span class="kw">ggplot</span>(<span class="dt">data =</span> mpg) <span class="op">+</span>
+<span class="st">  </span><span class="kw">geom_point</span>(<span class="dt">mapping =</span> <span class="kw">aes</span>(<span class="dt">x =</span> displ, <span class="dt">y =</span> hwy), <span class="dt">alpha =</span> <span class="fl">0.5</span>)<span class="op">+</span>
+<span class="st">  </span><span class="kw">ggtitle</span>(<span class="st">&quot;without jitter&quot;</span>)</code></pre></div>
+<div class="task">
+TASK:
+<ul>
+<li>
+What parameters to <code>geom_jitter()</code> control the amount of displacement?
+</li>
+<li>
+<p>Try reproducing the following plot. (Hint: look up <code>coord_flip()</code>) <img src="ic-datavis_files/figure-html/unnamed-chunk-24-1.png" width="672" /></p>
+</li>
+</div>
+<p><span class="citation">(Wickham and Grolemund <a href="#ref-RDS_Book">2016</a>)</span></p>
+</div>
+</div>
+<div id="novel-graphs" class="section level2">
+<h2><span class="header-section-number">2.10</span> Novel graphs</h2>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references">
+<div id="ref-RDS_Book">
+<p>Wickham, Hadley, and Garrett Grolemund. 2016. <em>R for Data Science: Import, Tidy, Transform, Visualize, and Model Data</em>. 2nd ed. O’Reilly Media, Inc.</p>
+</div>
+<div id="ref-Hadley_2010">
+<p>Wickham, Hadley. 2010. “A Layered Grammar of Graphics.” <em>Journal of Computational and Graphical Statistics</em> 19 (1). Taylor &amp; Francis: 3–28. doi:<a href="https://doi.org/10.1198/jcgs.2009.07098">10.1198/jcgs.2009.07098</a>.</p>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="gettingStarted.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="data-transformation.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["ic-datavis.pdf", "ic-datavis.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Data Visualisation Module</title>
+  <meta name="description" content="Course material for Visualisation course at Imperial">
+  <meta name="generator" content="bookdown  and GitBook 2.6.7">
+
+  <meta property="og:title" content="Data Visualisation Module" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="Course material for Visualisation course at Imperial" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Data Visualisation Module" />
+  
+  <meta name="twitter:description" content="Course material for Visualisation course at Imperial" />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  
+  
+
+<link rel="next" href="gettingStarted.html">
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+
+
+
+
+
+
+
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+
+
+<style type="text/css">
+div.sourceCode { overflow-x: auto; }
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code > span.dt { color: #902000; } /* DataType */
+code > span.dv { color: #40a070; } /* DecVal */
+code > span.bn { color: #40a070; } /* BaseN */
+code > span.fl { color: #40a070; } /* Float */
+code > span.ch { color: #4070a0; } /* Char */
+code > span.st { color: #4070a0; } /* String */
+code > span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code > span.ot { color: #007020; } /* Other */
+code > span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code > span.fu { color: #06287e; } /* Function */
+code > span.er { color: #ff0000; font-weight: bold; } /* Error */
+code > span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+code > span.cn { color: #880000; } /* Constant */
+code > span.sc { color: #4070a0; } /* SpecialChar */
+code > span.vs { color: #4070a0; } /* VerbatimString */
+code > span.ss { color: #bb6688; } /* SpecialString */
+code > span.im { } /* Import */
+code > span.va { color: #19177c; } /* Variable */
+code > span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code > span.op { color: #666666; } /* Operator */
+code > span.bu { } /* BuiltIn */
+code > span.ex { } /* Extension */
+code > span.pp { color: #bc7a00; } /* Preprocessor */
+code > span.at { color: #7d9029; } /* Attribute */
+code > span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code > span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code > span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Visualization Module</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Welcome</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#prerequisite"><i class="fa fa-check"></i>Prerequisite</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#acknowledgements"><i class="fa fa-check"></i>Acknowledgements</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#contact-information-for-instructor"><i class="fa fa-check"></i>Contact information for instructor</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="gettingStarted.html"><a href="gettingStarted.html"><i class="fa fa-check"></i><b>1</b> Getting started</a><ul>
+<li class="chapter" data-level="1.1" data-path="gettingStarted.html"><a href="gettingStarted.html#installing-r-and-ide"><i class="fa fa-check"></i><b>1.1</b> Installing R and IDE</a></li>
+<li class="chapter" data-level="1.2" data-path="gettingStarted.html"><a href="gettingStarted.html#getting-help"><i class="fa fa-check"></i><b>1.2</b> Getting help</a></li>
+<li class="chapter" data-level="1.3" data-path="gettingStarted.html"><a href="gettingStarted.html#installing-packages"><i class="fa fa-check"></i><b>1.3</b> Installing packages</a></li>
+<li class="chapter" data-level="1.4" data-path="gettingStarted.html"><a href="gettingStarted.html#rmarkdown-introduction"><i class="fa fa-check"></i><b>1.4</b> Rmarkdown introduction</a></li>
+<li class="chapter" data-level="1.5" data-path="gettingStarted.html"><a href="gettingStarted.html#r-data-structure-review"><i class="fa fa-check"></i><b>1.5</b> R data structure review</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html"><i class="fa fa-check"></i><b>2</b> Introduction to <code>ggplot2</code></a><ul>
+<li class="chapter" data-level="2.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#overview"><i class="fa fa-check"></i><b>2.1</b> Overview</a></li>
+<li class="chapter" data-level="2.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#tidyverse-package"><i class="fa fa-check"></i><b>2.2</b> tidyverse package</a></li>
+<li class="chapter" data-level="2.3" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#ggplot2-package"><i class="fa fa-check"></i><b>2.3</b> ggplot2 package</a><ul>
+<li class="chapter" data-level="2.3.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#qplot"><i class="fa fa-check"></i><b>2.3.1</b> qplot()</a></li>
+<li class="chapter" data-level="2.3.2" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#ggplot"><i class="fa fa-check"></i><b>2.3.2</b> ggplot()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.4" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#visual-analytics---intro"><i class="fa fa-check"></i><b>2.4</b> Visual analytics - Intro</a></li>
+<li class="chapter" data-level="2.5" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#facets"><i class="fa fa-check"></i><b>2.5</b> Facets</a></li>
+<li class="chapter" data-level="2.6" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#geometric-objects"><i class="fa fa-check"></i><b>2.6</b> Geometric objects</a></li>
+<li class="chapter" data-level="2.7" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#a-layered-grammar-of-graphics"><i class="fa fa-check"></i><b>2.7</b> A layered grammar of graphics</a><ul>
+<li class="chapter" data-level="2.7.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#loading-the-data"><i class="fa fa-check"></i><b>2.7.1</b> Loading the data</a></li>
+</ul></li>
+<li class="chapter" data-level="2.8" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#statistical-transformations"><i class="fa fa-check"></i><b>2.8</b> Statistical transformations</a></li>
+<li class="chapter" data-level="2.9" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#position-adjustments"><i class="fa fa-check"></i><b>2.9</b> Position adjustments</a><ul>
+<li class="chapter" data-level="2.9.1" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#geom_jitter"><i class="fa fa-check"></i><b>2.9.1</b> geom_jitter()</a></li>
+</ul></li>
+<li class="chapter" data-level="2.10" data-path="introduction-to-ggplot2.html"><a href="introduction-to-ggplot2.html#novel-graphs"><i class="fa fa-check"></i><b>2.10</b> Novel graphs</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a><ul>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#importing-data"><i class="fa fa-check"></i><b>3.1</b> Importing data</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="data-transformation.html"><a href="data-transformation.html#delimited-text-data-file"><i class="fa fa-check"></i><b>3.1.1</b> Delimited text data file</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data-transformation.html"><a href="data-transformation.html#data-from-an-excel-file"><i class="fa fa-check"></i><b>3.1.2</b> Data from an excel file</a></li>
+<li class="chapter" data-level="3.1.3" data-path="data-transformation.html"><a href="data-transformation.html#data-from-spsssasstata-files"><i class="fa fa-check"></i><b>3.1.3</b> Data from SPSS/SAS/Stata files</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#data-transformation-1"><i class="fa fa-check"></i><b>3.2</b> Data transformation</a><ul>
+<li class="chapter" data-level="3.2.1" data-path="data-transformation.html"><a href="data-transformation.html#core-verbs-in-dplyr"><i class="fa fa-check"></i><b>3.2.1</b> Core verbs in dplyr</a></li>
+<li class="chapter" data-level="3.2.2" data-path="data-transformation.html"><a href="data-transformation.html#chaining-function-with-the-pipe-operator"><i class="fa fa-check"></i><b>3.2.2</b> Chaining function with the pipe operator</a></li>
+<li class="chapter" data-level="3.2.3" data-path="data-transformation.html"><a href="data-transformation.html#tutorial"><i class="fa fa-check"></i><b>3.2.3</b> Tutorial</a></li>
+<li class="chapter" data-level="3.2.4" data-path="data-transformation.html"><a href="data-transformation.html#dates-and-times"><i class="fa fa-check"></i><b>3.2.4</b> Dates and times</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#tidy-data"><i class="fa fa-check"></i><b>3.3</b> Tidy data</a><ul>
+<li class="chapter" data-level="3.3.1" data-path="data-transformation.html"><a href="data-transformation.html#gather"><i class="fa fa-check"></i><b>3.3.1</b> <code>gather()</code></a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-transformation.html"><a href="data-transformation.html#spread"><i class="fa fa-check"></i><b>3.3.2</b> <code>spread()</code></a></li>
+<li class="chapter" data-level="3.3.3" data-path="data-transformation.html"><a href="data-transformation.html#separate"><i class="fa fa-check"></i><b>3.3.3</b> <code>separate()</code></a></li>
+<li class="chapter" data-level="3.3.4" data-path="data-transformation.html"><a href="data-transformation.html#unite"><i class="fa fa-check"></i><b>3.3.4</b> <code>unite()</code></a></li>
+<li class="chapter" data-level="3.3.5" data-path="data-transformation.html"><a href="data-transformation.html#exercise"><i class="fa fa-check"></i><b>3.3.5</b> Exercise</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html"><i class="fa fa-check"></i><b>4</b> Exploratory data analysis</a><ul>
+<li class="chapter" data-level="4.1" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#case-study-movie-data"><i class="fa fa-check"></i><b>4.1</b> Case study: Movie data</a></li>
+<li class="chapter" data-level="4.2" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#case-study-skiers"><i class="fa fa-check"></i><b>4.2</b> Case study: Skiers</a></li>
+<li class="chapter" data-level="4.3" data-path="exploratory-data-analysis.html"><a href="exploratory-data-analysis.html#graphs-in-25-ways"><i class="fa fa-check"></i><b>4.3</b> Graphs in 25 ways</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="presentation.html"><a href="presentation.html"><i class="fa fa-check"></i><b>5</b> Presentation</a><ul>
+<li class="chapter" data-level="5.1" data-path="presentation.html"><a href="presentation.html#choosing-colours"><i class="fa fa-check"></i><b>5.1</b> Choosing colours</a></li>
+<li class="chapter" data-level="5.2" data-path="presentation.html"><a href="presentation.html#annotations"><i class="fa fa-check"></i><b>5.2</b> Annotations</a></li>
+<li class="chapter" data-level="5.3" data-path="presentation.html"><a href="presentation.html#axes"><i class="fa fa-check"></i><b>5.3</b> Axes</a></li>
+<li class="chapter" data-level="5.4" data-path="presentation.html"><a href="presentation.html#legend"><i class="fa fa-check"></i><b>5.4</b> Legend</a></li>
+<li class="chapter" data-level="5.5" data-path="presentation.html"><a href="presentation.html#using-themes"><i class="fa fa-check"></i><b>5.5</b> Using themes</a></li>
+<li class="chapter" data-level="5.6" data-path="presentation.html"><a href="presentation.html#export"><i class="fa fa-check"></i><b>5.6</b> Export</a><ul>
+<li class="chapter" data-level="5.6.1" data-path="presentation.html"><a href="presentation.html#pdf-svg-wmf-vector-files"><i class="fa fa-check"></i><b>5.6.1</b> PDF, SVG, WMF vector files</a></li>
+<li class="chapter" data-level="5.6.2" data-path="presentation.html"><a href="presentation.html#output-for-powerpoint"><i class="fa fa-check"></i><b>5.6.2</b> Output for Powerpoint</a></li>
+</ul></li>
+<li class="chapter" data-level="5.7" data-path="presentation.html"><a href="presentation.html#animation"><i class="fa fa-check"></i><b>5.7</b> Animation</a><ul>
+<li class="chapter" data-level="5.7.1" data-path="presentation.html"><a href="presentation.html#editing-a-vector-output-file"><i class="fa fa-check"></i><b>5.7.1</b> Editing a vector Output file</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html"><i class="fa fa-check"></i><b>6</b> Visualisation techniques</a><ul>
+<li class="chapter" data-level="6.1" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#web-based-visualisation-in-r"><i class="fa fa-check"></i><b>6.1</b> Web-based visualisation in R</a><ul>
+<li class="chapter" data-level="6.1.1" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#plotly"><i class="fa fa-check"></i><b>6.1.1</b> plotly</a></li>
+<li class="chapter" data-level="6.1.2" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#crosstalk"><i class="fa fa-check"></i><b>6.1.2</b> crosstalk</a></li>
+</ul></li>
+<li class="chapter" data-level="6.2" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#network-visualisation"><i class="fa fa-check"></i><b>6.2</b> Network visualisation</a></li>
+<li class="chapter" data-level="6.3" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#other-techniques"><i class="fa fa-check"></i><b>6.3</b> Other techniques</a><ul>
+<li class="chapter" data-level="6.3.1" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#ggally-extension-to-ggplot2"><i class="fa fa-check"></i><b>6.3.1</b> GGally: Extension to <code>ggplot2</code></a></li>
+<li class="chapter" data-level="6.3.2" data-path="visualisation-techniques.html"><a href="visualisation-techniques.html#upset-diagram"><i class="fa fa-check"></i><b>6.3.2</b> Upset diagram</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="7" data-path="beyond.html"><a href="beyond.html"><i class="fa fa-check"></i><b>7</b> Beyond</a><ul>
+<li class="chapter" data-level="7.1" data-path="beyond.html"><a href="beyond.html#tableau-tutorial"><i class="fa fa-check"></i><b>7.1</b> Tableau tutorial</a></li>
+<li class="chapter" data-level="7.2" data-path="beyond.html"><a href="beyond.html#python-tutorial"><i class="fa fa-check"></i><b>7.2</b> python tutorial</a></li>
+<li class="chapter" data-level="7.3" data-path="beyond.html"><a href="beyond.html#d3-tutorial"><i class="fa fa-check"></i><b>7.3</b> D3 tutorial</a><ul>
+<li class="chapter" data-level="7.3.1" data-path="beyond.html"><a href="beyond.html#html-widget"><i class="fa fa-check"></i><b>7.3.1</b> HTML widget</a></li>
+</ul></li>
+<li class="chapter" data-level="7.4" data-path="beyond.html"><a href="beyond.html#useful-blog-posts"><i class="fa fa-check"></i><b>7.4</b> Useful blog posts</a></li>
+</ul></li>
+<li class="chapter" data-level="8" data-path="final-project.html"><a href="final-project.html"><i class="fa fa-check"></i><b>8</b> Final project</a></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Data Visualisation Module</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="header">
+<h1 class="title">Data Visualisation Module</h1>
+</div>
+<div id="welcome" class="section level1 unnumbered">
+<h1>Welcome</h1>
+<p>Welcome to the practical sessions of Visualisation module. This course is a collection of instructions and exercises designed to build:</p>
+<ul>
+<li>A foundation in exploratory data analysis in R.</li>
+<li>Ability to apply appropriate data transformation and create elegant and informative data visualisations that help you understand data and communicate findings.</li>
+<li>Working knowledge of other data visualization systems and libraries, including Tableau, D3, and libraries in Python.</li>
+</ul>
+<p>R is one of the fast growing programming languages and tool of choice for analysts and data scientists. In part, R owes its popularity to its open source distribution and large user community. In this course, we will primarily focus on R as a language of choice to put visualization theories into practice.</p>
+<div id="prerequisite" class="section level2 unnumbered">
+<h2>Prerequisite</h2>
+<p>This course is intended for those who have at least a basic programming experience in R.</p>
+</div>
+<div id="acknowledgements" class="section level2 unnumbered">
+<h2>Acknowledgements</h2>
+<p>This course material has been inspired and influenced by other course materials, articles and books:</p>
+<ul>
+<li>R Graphics Cookbook 2e. Winston Chang. O’Reilly.</li>
+<li></li>
+</ul>
+</div>
+<div id="contact-information-for-instructor" class="section level2 unnumbered">
+<h2>Contact information for instructor</h2>
+<p>Ryo Sakai (<a href="mailto:r.sakai@imperial.ac.k">r.sakai@imperial.ac.k</a>)</p>
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+
+<a href="gettingStarted.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"google": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "google", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"download": ["ic-datavis.pdf", "ic-datavis.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>
